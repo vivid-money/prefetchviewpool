@@ -17,10 +17,19 @@ A RecyclerView's RecycledViewPool extension that enables you to request specific
 
 If you're using some of the implementation modules(Coroutines, RxJava *, Executor) then the usage will be as simple as following:
 
+In your activity's `onCreate()` or fragment's `onViewCreated()` add
+
+
 ``` Kotlin
 recycler.setupWithPrefetchViewPool { setPrefetchBound(viewType = 1, count = 20) }
         .bindToLifecycle(lifecycleOwner = this)
 ```
+
+and you're done
+
+## Sample
+
+You could see an example of usage in [sample](https://github.com/vivid-money/prefetchviewpool/blob/main/sample/src/main/java/vivid/money/prefetchviewpool/sample/MainActivity.kt)
 
 ## Download
 Library is distributed through JitPack
