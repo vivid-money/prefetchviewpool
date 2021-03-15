@@ -1,0 +1,15 @@
+rootProject.name = "prefetchviewpool"
+
+include(":sample")
+
+void includeProject(final String name, final String path) {
+    include(name)
+    final def projectDir = new File(rootDir, path)
+    project(name).projectDir = projectDir
+}
+
+includeProject(":prefetchviewpool-core", "lib/core")
+includeProject(":prefetchviewpool-coroutines", "lib/coroutines")
+includeProject(":prefetchviewpool-rxjava-2", "lib/rxjava-2")
+includeProject(":prefetchviewpool-rxjava-3", "lib/rxjava-3")
+includeProject(":prefetchviewpool-executor", "lib/executor")
